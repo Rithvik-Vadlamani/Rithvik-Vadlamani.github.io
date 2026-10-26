@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rithvik Vadlamani</title>
+<meta name="description" content="Rithvik Vadlamani, ECE student at UT Austin. Power electronics, PCB design, embedded firmware and software projects.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141311'/%3E%3Cpath d='M9 23V9h8a4.5 4.5 0 0 1 0 9h-8m7 0 6 5' fill='none' stroke='%23e59a62' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/Newsreader-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/HankenGrotesk-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+
+<div class="page">
+  <header class="side">
+    <div class="side-inner">
+      <h1 class="name">Rithvik Vadlamani</h1>
+      <p class="role">Electrical and computer engineering, UT Austin. Power electronics, PCB design, embedded firmware and software tools.</p>
+      <p class="seek">Looking for Summer 2027 internships in hardware, embedded, robotics and software.</p>
+
+      <nav class="toc" aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="side-tools">
+        <button class="theme" type="button">
+          <span class="theme-label">Dark mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="projects" aria-labelledby="h-projects">
+      <h2 id="h-projects">Projects</h2>
+
+      <div class="controls">
+        <div class="filters" role="group" aria-label="Filter projects by area">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="hardware" aria-pressed="false">Hardware</button>
+          <button type="button" class="chip" data-filter="software" aria-pressed="false">Software</button>
+          <button type="button" class="chip" data-filter="embedded" aria-pressed="false">Embedded</button>
+          <button type="button" class="chip" data-filter="power" aria-pressed="false">Power</button>
+        </div>
+        <div class="meta">
+          <span id="count" role="status" aria-live="polite">10 projects</span>
+          <button type="button" id="toggle-all" class="link-btn">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="list">
+
+        <!-- 1 -->
+        <article class="proj" data-tags="hardware power" data-open="true">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-guadaloop">
+              <span class="proj-title">Guadaloop power electronics</span>
+              <span class="proj-when">Jan 2026 – Present</span>
+              <span class="proj-sum">Power boards for a pod: buck converters, LDOs and a 60 V levitation H-bridge.</span>
+              <span class="proj-stack">KiCad · Buck converters · Gate drivers · Current sensing</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-guadaloop"><div class="proj-inner">
+            <ul class="points">
+              <li>Designed power PCBs with buck converters and LDOs that step a 60 V battery down for onboard electronics and distribute 60 V directly to the levitation and fluids systems.</li>
+              <li>Co-designed a four-layer, 60 V H-bridge PCB for magnetic levitation, integrating gate drivers and bidirectional current sensing.</li>
+              <li>Assembled custom circuitry and an inverter to supply the propulsion system from the pod's 600 V battery.</li>
+              <li>Modeled a Faraday cage enclosure to limit electromagnetic interference with nearby subsystems.</li>
+              <li>Soldered SMD components on the existing low-voltage board with teammates.</li>
+            </ul>
+            <div class="figs two">
+              <figure>
+                <img src="assets/img/mv-board.webp" width="1600" height="1086" loading="lazy" decoding="async" alt="3D render of the MV24 Rev F1 power board with four large electrolytic capacitors, an inductor, and screw terminals along the bottom edge.">
+                <figcaption>MV24 Rev F1 board render. Silkscreen target: 36–72 V in, 24 V at 20 A max.</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/hbridge-pcb.webp" width="1600" height="1166" loading="lazy" decoding="async" alt="Top-down render of the levitation H-bridge PCB showing four power MOSFETs, two gate drivers, bus and coil terminals, and three bulk capacitors.">
+                <figcaption>Levitation H-bridge, proof-of-concept Rev A review render. 60 V, 16 kHz.</figcaption>
+              </figure>
+            </div>
+            <p class="note">Voltage and current figures are design targets. The published packages are design and review material; no measured hardware performance is claimed. This is team work, not sole authorship.</p>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/guadaloop-power-electronics">Design files on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 2 -->
+        <article class="proj" data-tags="hardware embedded" data-open="true">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-kvm">
+              <span class="proj-title">HDMI/USB KVM switch</span>
+              <span class="proj-when">Jun – Aug 2026</span>
+              <span class="proj-sum">A four-layer board and bare-metal firmware that share two displays and a USB hub between two computers.</span>
+              <span class="proj-stack">KiCad · STM32F030 · C</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-kvm"><div class="proj-inner">
+            <ul class="points">
+              <li>Laid out a 100 × 100 mm, four-layer PCB to switch two HDMI displays and a four-port USB 2.0 hub between two computers, using differential pair routing and ground plane analysis to target 100 Ω HDMI and 90 Ω USB impedance.</li>
+              <li>Added 3.3 V and 5 V supply supervisors with hardware reset gating and capacitor current limiting, holding the USB hub inactive during startup, microcontroller restarts and supply faults until monitored voltages meet operating requirements.</li>
+              <li>Wrote C firmware without an operating system for an STM32F030: button debouncing, host detection and watchdog recovery, with a 150 ms disconnect interval followed by 100 ms of settling.</li>
+              <li>Tested the firmware across 804 modeled states and 173,664 transition cases, and detected six injected defects through mutation testing. PCB checks finished with zero design rule violations and zero unconnected items.</li>
+            </ul>
+            <dl class="specs" aria-label="KVM switch at a glance">
+              <div><dt>Board</dt><dd>100 × 100 mm, 4 layers</dd></div>
+              <div><dt>Impedance targets</dt><dd>100 Ω HDMI, 90 Ω USB</dd></div>
+              <div><dt>Model-checked</dt><dd>804 states, 173,664 transitions</dd></div>
+              <div><dt>Mutation testing</dt><dd>6 injected defects detected</dd></div>
+              <div><dt>Switch timing</dt><dd>150 ms disconnect, 100 ms settle</dd></div>
+              <div><dt>DRC / connectivity</dt><dd>0 violations, 0 unconnected</dd></div>
+            </dl>
+            <p class="note">Prototype design. Firmware, model and static PCB checks do not establish USB enumeration, HDMI interoperability, signal integrity or physical operating limits; the board has not been qualified on assembled hardware. Current published revision A2 (September 2026) uses external regulated 12 V power. The USB-C connectors carry USB 2.0 data only.</p>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/kvm-switch">KiCad project, firmware and verification on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 3 -->
+        <article class="proj" data-tags="hardware power" data-open="true">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-wpt">
+              <span class="proj-title">Wireless power transfer for a moving pod</span>
+              <span class="proj-when">Mar 2026 – Present</span>
+              <span class="proj-sum">Independent research for Guadaloop: coils, resonant compensation and a four-section track model.</span>
+              <span class="proj-stack">MATLAB · Simulink · Simscape · Resonant converters</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-wpt"><div class="proj-inner">
+            <ul class="points">
+              <li>Reviewed IEEE papers on wireless power transfer to plan how the same approach could work for the pod.</li>
+              <li>Chose series compensation on the transmitter and receiver coils for an initial 85 kHz design, one capacitor per coil, to simplify prototype construction compared with LCC networks that need extra inductors and capacitors.</li>
+              <li>Built inverter and rectifier circuits for a moving system: DC to AC to drive the transmitter coil, received AC back to DC for onboard electronics, magnetic levitation and braking.</li>
+              <li>Compared coil geometries, transmitter segmentation and compensation networks for a 60 V supply and 12 foot track, weighing circuit complexity against sensitivity to coil misalignment.</li>
+            </ul>
+            <p>The current model is a four-section double-D (DD) track, 12 ft × 2 ft, at 250 kHz across a 100 mm winding gap, with four LCC primary branches and a series-compensated receiver. The target is 60 V and 20 A (1.2 kW) from a maximum 100 V DC input.</p>
+            <div class="figs">
+              <figure>
+                <img src="assets/img/wpt-circuit.webp" width="1600" height="965" loading="lazy" decoding="async" alt="Block diagram of the four-section wireless power circuit: a 100 volt DC bus feeding four GaN full bridges, LCC compensation and DD transmitter coils, coupled to a DD receiver, a synchronous rectifier and a 60 volt, 20 amp load.">
+                <figcaption>Four-section DD-to-DD circuit from the Simulink model.</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/wpt-dd.webp" width="1600" height="1309" loading="lazy" decoding="async" alt="Three plots: four DD coil pads laid end to end along the track, mutual inductance against displacement, and required modulation along the track against the 100 volt bus limit.">
+                <figcaption>DD pad layout, mutual inductance and required modulation along the track.</figcaption>
+              </figure>
+            </div>
+            <p class="note">Results are simulations and calculations. Circuit values are simulation targets; component and thermal validation and hardware testing remain to be done.</p>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/guadaloop-wireless-power-transfer">Models and reports on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 4 -->
+        <article class="proj" data-tags="software" data-open="true">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-alerts">
+              <span class="proj-title">Internship alert system</span>
+              <span class="proj-when">Jul – Aug 2026</span>
+              <span class="proj-sum">Finds new internship postings, ranks them against my resumes, and alerts me.</span>
+              <span class="proj-stack">Python · FastAPI · PostgreSQL · ONNX · GitHub Actions</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-alerts"><div class="proj-inner">
+            <ul class="points">
+              <li>Built a personal tool to cut manual searches and missed deadlines, and to hear about new roles earlier.</li>
+              <li>FastAPI dashboard on PostgreSQL holding 40,000+ job records and growing, with custom filters, password protection and row-level security across ten tables.</li>
+              <li>Eight-thread collection pipeline with URL deduplication, retries and progressive commits so progress survives failures. One measured run checked 100+ company boards and found 89 new eligible roles in 284 seconds.</li>
+              <li>Alerts for roles matching my filters by email and ntfy mobile push.</li>
+              <li>Ranks jobs against my own resumes using ONNX with keyword scoring and cached vectors.</li>
+              <li>Tracks five application stages with dates and notes, and excludes finished items from discovery.</li>
+            </ul>
+            <p class="links">
+              <a href="https://internship-alerts-1412.onrender.com/demo/">Demo with fictional data</a>
+              <a href="https://github.com/Rithvik-Vadlamani/internship-alert-system">Source on GitHub</a>
+            </p>
+          </div></div>
+        </article>
+
+        <!-- 5 -->
+        <article class="proj" data-tags="software hardware">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-rag">
+              <span class="proj-title">KiCad datasheet RAG assistant</span>
+              <span class="proj-when">Mar 2026</span>
+              <span class="proj-sum">Answers component questions from datasheets with page-level citations, tied to the actual schematic netlist.</span>
+              <span class="proj-stack">Python · SQLite · NumPy · OpenAI/Ollama · pytest</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-rag"><div class="proj-inner">
+            <ul class="points">
+              <li>Python retrieval-augmented generation pipeline combining PDF extraction, keyword and vector search, and KiCad connectivity graphs, with configurable local and cloud models.</li>
+              <li>Traces pin and net connections from KiCad netlists to datasheet pages for compatibility reviews, and flags missing documents and stale indexes after schematic or datasheet changes.</li>
+              <li>Incremental indexing, project isolation and source-quote validation reject stale indexes and invalid citations.</li>
+              <li>38 automated tests cover retrieval, netlist parsing, electrical calculations and API request and error handling. Logic margin, pin voltage, regulator thermal, current budget and I²C pull-up checks were verified against synthetic circuit failure cases.</li>
+            </ul>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/kicad-datasheet-assistant">Source on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 6 -->
+        <article class="proj" data-tags="software">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-lib">
+              <span class="proj-title">Multithreaded library management system</span>
+              <span class="proj-when">Apr 2026</span>
+              <span class="proj-sum">A JavaFX client and Java TCP server where concurrent borrowers never get the same copy.</span>
+              <span class="proj-stack">Java · JavaFX · TCP sockets · Gson · JUnit 5</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-lib"><div class="proj-inner">
+            <ul class="points">
+              <li>JavaFX client and TCP server exchanging JSON through Gson. Socket work runs on background threads and updates controls through Platform.runLater(), keeping the interface responsive.</li>
+              <li>One thread per client connection, with synchronized borrow, return and hold operations and an ordered hold queue that reserves returned items for the next waiting member.</li>
+              <li>JUnit 5 tests for login, duplicate username rejection and concurrent borrowing, using @TempDir filesystem fixtures.</li>
+            </ul>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/library-management-system">Source on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 7 -->
+        <article class="proj" data-tags="software">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-lc3b">
+              <span class="proj-title">LC-3b pipeline and virtual memory simulators</span>
+              <span class="proj-when">Apr 2026</span>
+              <span class="proj-sum">A five-stage pipelined processor simulator and a separate microcoded one with virtual memory.</span>
+              <span class="proj-stack">C · Computer architecture</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-lc3b"><div class="proj-inner">
+            <ul class="points">
+              <li>C simulator for an LC-3b with five pipeline stages, modeling control and data latches and multi-cycle instruction cache latency. Implements stalls without forwarding and squashing for branches, jumps and traps.</li>
+              <li>Validated pipeline timing and final register and memory state against reference simulators using assembly tests for consecutive dependencies, dependencies after loads and branch hazards, comparing stall and squash counts with expected cycle behavior.</li>
+              <li>Extended a separate microcoded simulator with virtual memory: address translation states, widened microinstructions for new control signals, and handling for page fault, protection, unaligned and illegal opcode exceptions.</li>
+            </ul>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/lc3b-simulator">Source on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 8 -->
+        <article class="proj" data-tags="software hardware">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-skill">
+              <span class="proj-title">Codex skill for PCB automation</span>
+              <span class="proj-when">Mar 2026</span>
+              <span class="proj-sum">Reusable instructions that guide AI agents from electronics requirements to a checked KiCad schematic.</span>
+              <span class="proj-stack">OpenAI Codex · Markdown · YAML · KiCad CLI</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-skill"><div class="proj-inner">
+            <ul class="points">
+              <li>Modular Markdown instructions, reference files and YAML metadata let agents discover the skill and load task-specific guidance selectively.</li>
+              <li>Defines a KiCad workflow with version-aware CLI commands, explicit design constraints and verification criteria: electrical rule checks, netlist comparisons and rendered-output review to confirm intended connections and schematic readability.</li>
+            </ul>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/pcb-automation-skill">Source on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 9 -->
+        <article class="proj" data-tags="embedded hardware">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-bs">
+              <span class="proj-title">Embedded Battleship</span>
+              <span class="proj-when">Apr 2025</span>
+              <span class="proj-sum">A two-player game on a custom PCB with an LCD, buttons, LEDs and a speaker.</span>
+              <span class="proj-stack">C · MSPM0G3507 (Cortex-M0+) · ST7735 · PCB assembly</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-bs"><div class="proj-inner">
+            <ul class="points">
+              <li>Programmed an MSPM0G3507 in C with a six-state machine and compact board data structures.</li>
+              <li>Designed and soldered custom PCBs connecting the microcontroller to buttons, LCD, LEDs and speaker.</li>
+              <li>Wrote ST7735 graphics routines for bitmap rendering, grid displays, cursor control and text in English and Spanish on a 160 × 110 pixel grid.</li>
+            </ul>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/Battleship-Game">Source on GitHub</a></p>
+          </div></div>
+        </article>
+
+        <!-- 10 -->
+        <article class="proj" data-tags="hardware">
+          <h3>
+            <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-delta">
+              <span class="proj-title">DeltaTile INT4 accelerator</span>
+              <span class="proj-when">Tiny Tapeout</span>
+              <span class="proj-sum">A 2 × 2 signed INT4 systolic array that updates stored scores from changes in input features.</span>
+              <span class="proj-stack">Verilog · Cocotb · Python · Tiny Tapeout (IHP)</span>
+              <span class="proj-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="proj-body" id="p-delta"><div class="proj-inner">
+            <ul class="points">
+              <li>Systolic accelerator that retains four scores and applies exact corrections from input changes instead of recomputing from scratch. A host-side planner chooses dense or incremental frames.</li>
+              <li>Five chip-level tests cover every signed 4-bit multiplier input pair, 400 incremental matrix transitions, 15,000 randomized protocol cycles and 200 host-planned frames; 13 more tests cover the host software.</li>
+              <li>RTL tests, gate-level tests, the one-tile physical build, signoff metrics and the official IHP26b precheck pass.</li>
+            </ul>
+            <p class="note">Fabrication submission and physical silicon validation are still outstanding.</p>
+            <p class="links"><a href="https://github.com/Rithvik-Vadlamani/ttihp-deltatile">Design and verification evidence on GitHub</a></p>
+          </div></div>
+        </article>
+
+      </div>
+      <p class="empty" id="empty" hidden>No projects match this filter.</p>
+    </section>
+
+    <section id="experience" aria-labelledby="h-exp">
+      <h2 id="h-exp">Experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Guadaloop, Power Electronics Team</h3>
+          <span class="proj-when">Jan 2026 – Present</span>
+        </div>
+        <p>Designing and assembling the power boards, inverter and shielding for a pod's electrical system. Details and renders are in <a href="#p-guadaloop" data-jump>the project above</a>.</p>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="h-skills">
+      <h2 id="h-skills">Skills</h2>
+      <dl class="skills">
+        <div><dt>Hardware design</dt><dd>KiCad, schematics, PCB layout, differential pair routing, impedance targets, ground plane analysis, soldering</dd></div>
+        <div><dt>Power and interfaces</dt><dd>DC-DC conversion, power distribution, supply supervision, reset circuitry, HDMI, USB 2.0 hubs, USB-C data</dd></div>
+        <div><dt>Languages</dt><dd>C, C++, Python, Java, SQL</dd></div>
+        <div><dt>Backend and data</dt><dd>FastAPI, JavaFX, TCP sockets, Gson, multithreading, REST APIs, PostgreSQL, SQLite, NumPy, ONNX, vector search, retrieval-augmented generation, OpenAI and Ollama APIs</dd></div>
+        <div><dt>Embedded and simulation</dt><dd>STM32F030, MSPM0, GNU Arm toolchain, GNU Make, MATLAB, Simulink, Simscape, oscilloscopes</dd></div>
+        <div><dt>Verification</dt><dd>Unit, model-based and mutation testing, pytest, JUnit 5, electrical and design rule checks, Gerber connectivity, BOM generation</dd></div>
+        <div><dt>Tools</dt><dd>Git, Linux, GitHub Actions, Fusion 360, KiCad CLI, OpenAI Codex</dd></div>
+      </dl>
+    </section>
+
+    <section id="education" aria-labelledby="h-edu">
+      <h2 id="h-edu">Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>The University of Texas at Austin</h3>
+          <span class="proj-when">Expected May 2028</span>
+        </div>
+        <p>B.S. in Electrical and Computer Engineering.</p>
+        <p class="muted">Coursework: Circuit Theory, Digital Logic Design, Computer Architecture, Embedded Systems, Data Structures and Algorithms, Operating Systems, Software Design and Implementation I and II.</p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact">Contact</h2>
+      <ul class="contact">
+        <li><a href="mailto:vadlamani.rithvik@utexas.edu">vadlamani.rithvik@utexas.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/rithvik-vadlamani/">LinkedIn</a></li>
+        <li><a href="https://github.com/Rithvik-Vadlamani">GitHub</a></li>
+      </ul>
+      <p class="resumes">
+        Resume (PDF):
+        <a href="assets/resume/Rithvik_Vadlamani_Hardware_Engineering_Resume.pdf" download>Hardware engineering</a>
+        <a href="assets/resume/Rithvik_Vadlamani_Software_Engineering_Resume.pdf" download>Software engineering</a>
+      </p>
+    </section>
+  </main>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
