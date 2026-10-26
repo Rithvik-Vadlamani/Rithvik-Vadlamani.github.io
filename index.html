@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rithvik Vadlamani</title>
 <meta name="description" content="Rithvik Vadlamani, ECE student at UT Austin. Power electronics, PCB design, embedded firmware and software projects.">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#141311">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141311'/%3E%3Cpath d='M9 23V9h8a4.5 4.5 0 0 1 0 9h-8m7 0 6 5' fill='none' stroke='%23e59a62' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/Newsreader-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/HankenGrotesk-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
 <script>
   document.documentElement.classList.add('js');
-  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 </head>
 <body>
@@ -25,7 +23,6 @@
     <div class="side-inner">
       <h1 class="name">Rithvik Vadlamani</h1>
       <p class="role">Electrical and computer engineering, UT Austin. Power electronics, PCB design, embedded firmware and software tools.</p>
-      <p class="seek">Looking for Summer 2027 internships in hardware, embedded, robotics and software.</p>
 
       <nav class="toc" aria-label="Sections">
         <a href="#projects">Projects</a>
@@ -34,12 +31,6 @@
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <div class="side-tools">
-        <button class="theme" type="button">
-          <span class="theme-label">Dark mode</span>
-        </button>
-      </div>
     </div>
   </header>
 
@@ -48,15 +39,7 @@
       <h2 id="h-projects">Projects</h2>
 
       <div class="controls">
-        <div class="filters" role="group" aria-label="Filter projects by area">
-          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="chip" data-filter="hardware" aria-pressed="false">Hardware</button>
-          <button type="button" class="chip" data-filter="software" aria-pressed="false">Software</button>
-          <button type="button" class="chip" data-filter="embedded" aria-pressed="false">Embedded</button>
-          <button type="button" class="chip" data-filter="power" aria-pressed="false">Power</button>
-        </div>
         <div class="meta">
-          <span id="count" role="status" aria-live="polite">10 projects</span>
           <button type="button" id="toggle-all" class="link-btn">Collapse all</button>
         </div>
       </div>
@@ -64,7 +47,7 @@
       <div class="list">
 
         <!-- 1 -->
-        <article class="proj" data-tags="hardware power" data-open="true">
+        <article class="proj" data-open="true">
           <h3>
             <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-guadaloop">
               <span class="proj-title">Guadaloop power electronics</span>
@@ -98,7 +81,7 @@
         </article>
 
         <!-- 2 -->
-        <article class="proj" data-tags="hardware embedded" data-open="true">
+        <article class="proj" data-open="true">
           <h3>
             <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-kvm">
               <span class="proj-title">HDMI/USB KVM switch</span>
@@ -129,7 +112,7 @@
         </article>
 
         <!-- 3 -->
-        <article class="proj" data-tags="hardware power" data-open="true">
+        <article class="proj" data-open="true">
           <h3>
             <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-wpt">
               <span class="proj-title">Wireless power transfer for a moving pod</span>
@@ -163,7 +146,7 @@
         </article>
 
         <!-- 4 -->
-        <article class="proj" data-tags="software" data-open="true">
+        <article class="proj" data-open="true">
           <h3>
             <button type="button" class="proj-head" aria-expanded="true" aria-controls="p-alerts">
               <span class="proj-title">Internship alert system</span>
@@ -190,7 +173,7 @@
         </article>
 
         <!-- 5 -->
-        <article class="proj" data-tags="software hardware">
+        <article class="proj">
           <h3>
             <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-rag">
               <span class="proj-title">KiCad datasheet RAG assistant</span>
@@ -212,7 +195,7 @@
         </article>
 
         <!-- 6 -->
-        <article class="proj" data-tags="software">
+        <article class="proj">
           <h3>
             <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-lib">
               <span class="proj-title">Multithreaded library management system</span>
@@ -233,7 +216,7 @@
         </article>
 
         <!-- 7 -->
-        <article class="proj" data-tags="software">
+        <article class="proj">
           <h3>
             <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-lc3b">
               <span class="proj-title">LC-3b pipeline and virtual memory simulators</span>
@@ -254,7 +237,7 @@
         </article>
 
         <!-- 8 -->
-        <article class="proj" data-tags="software hardware">
+        <article class="proj">
           <h3>
             <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-skill">
               <span class="proj-title">Codex skill for PCB automation</span>
@@ -274,7 +257,7 @@
         </article>
 
         <!-- 9 -->
-        <article class="proj" data-tags="embedded hardware">
+        <article class="proj">
           <h3>
             <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-bs">
               <span class="proj-title">Embedded Battleship</span>
@@ -295,7 +278,7 @@
         </article>
 
         <!-- 10 -->
-        <article class="proj" data-tags="hardware">
+        <article class="proj">
           <h3>
             <button type="button" class="proj-head" aria-expanded="false" aria-controls="p-delta">
               <span class="proj-title">DeltaTile INT4 accelerator</span>
@@ -317,7 +300,6 @@
         </article>
 
       </div>
-      <p class="empty" id="empty" hidden>No projects match this filter.</p>
     </section>
 
     <section id="experience" aria-labelledby="h-exp">

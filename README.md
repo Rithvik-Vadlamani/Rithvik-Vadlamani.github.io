@@ -12,11 +12,10 @@ python3 -m http.server 8123
 
 ## Edit content
 
-- Everything lives in `index.html`. Each project is one `<article class="proj" data-tags="...">`; `data-tags` drives the filter chips (hardware, software, embedded, power).
-- To remove a project, delete its `<article>` block. Update the count in `#count` (JS recalculates it on load).
+- Everything lives in `index.html`. Each project is one `<article class="proj">`; to remove a project, delete its block.
 - Start a project expanded by setting `aria-expanded="true"` on its `.proj-head` button.
 - Resume PDFs are in `assets/resume/`. Replace the files (keep the names) to update the downloads.
-- Colours, type and spacing tokens are at the top of `assets/style.css`.
+- Colours, type and spacing tokens are at the top of `assets/style.css`. The site is dark only.
 
 ## Deploy free on GitHub Pages
 
@@ -29,7 +28,7 @@ python3 -m http.server 8123
 3. Repo **Settings → Pages → Build and deployment**: Source "Deploy from a branch", branch `main`, folder `/ (root)`. Save.
 4. The site goes live at `https://rithvik-vadlamani.github.io/portfolio/` (or the root URL for a `.github.io` repo) within a minute or two. All asset paths are relative, so either works.
 
-Everything in the repo becomes public, including `PRODUCT.md`; delete it first if you prefer.
+Everything committed to the repo is public. Local design notes (`PRODUCT.md`) are gitignored and never pushed.
 
 ## Notes
 
